@@ -1,102 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GO WEATHER</title>
+    <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="GO.jpg" type="image/x-icon">
-    <!-- ICON IMPORT -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title> GO WEATHER </title>
-</head>                                                     
-<body>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  </head>
+  <body>
     <main class="main-container">
-    <header class="input-container">
-        <input class="city-input" placeholder="Search City" type="text">
+      <header class="input-container">
+        <input class="city-input" placeholder="Search City" type="text" />
         <button class="search-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-    </header>
-    <section class="weather-info"  style= "display: none;">
+      </header>
+
+      <section class="weather-info" style="display: none;">
         <div class="location-date-container">
-            <div class="location">
-                <i class="fa-solid fa-location-dot"></i>
-                <h4 class="country-txt">Kolkata</h4>
-            </div>
-            <h5 class="current-date-txt regular-txt">Wed, 16 Apr</h5>
+          <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <h5 class="country-txt">Kolkata</h5>
+          </div>
+          <div class="current-time-date">
+            <div id="current-time">12:00 PM</div>
+            <div class="current-date-txt regular-txt">Wed, 16 Apr</div>
+          </div>
         </div>
+
         <div class="weather-summary-container">
-            <img src="assets/weather/clouds.svg" class="weather-summary-img">
-            <div class="weather-summary-info">
-                <h1 class="temp-txt">30 °C</h1>
-                <h3 class="condition-txt regular-txt">Clouds</h3>
-            </div>
+          <div class="weather-summary-img" id="weather-svg"></div>
+          
+          <div class="weather-summary-info">
+            <h3 class="condition-txt regular-txt">Clouds</h3>
+            <h2 class="temp-txt">30 °C</h2>
+            <h4 class="feelslike-txt regular-txt">Feels like: 32 °C</h4>
+            <h4 class="minmax-txt regular-txt">Min: 26° | Max: 34°</h4>
+          </div>
         </div>
-    </div>
-    <div class="weather-conditions-container">
-        <div class="condition-item">
+
+        <div class="weather-conditions-container">
+          <div class="condition-item">
             <i class="fa-solid fa-droplet"></i>
             <div class="condition-info">
-                <h4 class="regular-txt">Humidity</h4>
-                <h4 class="humidity-value-txt">50%</h4>
+              <h4 class="regular-txt">Humidity</h4>
+              <h4 class="humidity-value-txt">50%</h4>
             </div>
-        </div>
+          </div>
 
-        <div class="condition-item">
+          <div class="condition-item">
+            <i class="fa-solid fa-smog"></i>
+            <div class="condition-info">
+              <h4 class="regular-txt">Air Quality</h4>
+              <h4 class="aqi-value-txt">Good</h4>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <i class="fa-solid fa-cloud-rain"></i>
+            <div class="condition-info">
+              <h4 class="regular-txt">Rain Chance</h4>
+              <h4 class="rain-value-txt">0%</h4>
+            </div>
+          </div>
+
+          <div class="condition-item">
             <i class="fa-solid fa-wind"></i>
             <div class="condition-info">
-                <h4 class="regular-txt">Wind Speed</h4>
-                <h4 class="wind-value-txt">2 M/s</h4>
+              <h4 class="regular-txt">Wind Speed</h4>
+              <h4 class="wind-value-txt">2 m/s</h4>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="forecast-items-container">
-        <div class="forecast-item">
-            <h4 class="forecast-item-date regular-txt">05 Aug</h4>
-            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
-            <h4 class="forecast-item-temp">29 °C</h4>
-        </div>
-        <div class="forecast-item">
-            <h4 class="forecast-item-date regular-txt">05 Aug</h4>
-            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
-            <h4 class="forecast-item-temp">29 °C</h4>
-        </div>
-        <div class="forecast-item">
-            <h4 class="forecast-item-date regular-txt">05 Aug</h4>
-            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
-            <h4 class="forecast-item-temp">29 °C</h4>
-        </div>
-    <div class="forecast-item">
-    <h4 class="forecast-item-date regular-txt">05 Aug</h4>
-    <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
-    <h4 class="forecast-item-temp">29 °C</h4>
-</div>
-    </div>
-    </section>
-     <section class="search-city section-message" >
-        <img src="assets/message/search-city.png" >
-        <div>
-            <h1>Search City</h1> <br>
-            <h4 class="regular-txt">
-                Find out the Weather conditions in your city. <br></br>
-                © 2025 Go Weather. All Rights Reserved. <br></br>
-                Powered by OpenWeatherMap <br>
-                Stay safe. Stay informed.
-            </h4>
-        </div>
-    </section> 
 
-    <section class="not-found section-message" style="display: none;">
-        <img src="assets/message/not-found.png" >
+        <div class="forecast-items-container"></div>
+      </section>
+
+      <section class="search-city section-message">
+        <img src="assets/message/search-city.png" alt="Search City" onerror="this.style.display='none'"/><h4 class="regular-txt">
+            Find out the Weather conditions in your city.</h4>
+        <button class="current-location-btn">
+          <i class="fa-solid fa-location-crosshairs"></i>
+          Use Current Location
+        </button>
+      </section>
+
+      <section class="not-found section-message" style="display: none">
+        <img src="assets/message/not-found.png" alt="Not Found" onerror="this.style.display='none'"/>
         <div>
-            <h1>Invalid City Input</h1> <br>
-            <h4 class="regular-txt">
-                Invalid input. Please make sure the city name is correct and try again. <br></br> 
-                © 2025 Go Weather. All Rights Reserved. 
-           
+          <h1>Invalid City Input</h1>
+          <h5 class="regular-txt">
+            Please try again with a valid city name.
+          </h5>
         </div>
-    </section> 
+      </section>
+      <footer class="app-footer">
+        <p><i><b>Be Aware. Be Safe.</b></i><br>Source: <a href="https://openweathermap.org/" target="_blank">OpenWeather</a></p>
+      </footer>
     </main>
-</body>
+     <footer class="app-footer1">
+       <p>© 2026 Go Weather. All Rights Reserved.<br>Our next versions: <a href="https://deeeevvv.github.io/Go.Weather.2.0/" target="_blank">Go Weather 2.0</a><br><a href="contact.html" target="_blank">Contact Us</a></p>
+    </footer>
+  </body>
 </html>
